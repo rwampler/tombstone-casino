@@ -12,6 +12,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
+      - cd packages/website
       - npm install
 
   build:
@@ -29,4 +30,4 @@ phases:
 
 artifacts:
   files:
-    - .output/public/**/*
+    - packages/website/.output/public/**/*
