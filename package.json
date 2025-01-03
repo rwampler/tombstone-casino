@@ -1,0 +1,6 @@
+{
+  "name": "tombstone-casino",
+  "workspaces": [
+    "packages/*"
+  ]
+}

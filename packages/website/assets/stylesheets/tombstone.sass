@@ -1,0 +1,55 @@
+@use 'sass:color'
+
+// official colors: https://www.tombstonemmo.com/press-kit
+$primary-dark-brown: #8A6215
+$primary-light-brown: #AB9261
+$primary-tan: #F7EBCF
+$primary-banker: #E7C731
+
+$primary-mirage: #DD6ED2
+$primary-shooter: #17B81F
+$primary-paramour: #CF1414
+
+// casino colors
+$primary-extra-dark-brown: color.adjust($primary-dark-brown, $lightness: -20%)
+
+// theme
+html
+  height: 100%
+
+body
+  background-color: $primary-extra-dark-brown
+  height: 100%
+
+  div#__nuxt
+    height: 100%
+
+// various game images as icons
+@keyframes spin
+  100%
+    transform: rotate(360deg)
+
+.logo-spin
+  animation: spin 1.75s linear infinite
+
+.logo-primer-cap
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -0.5 8 8' shape-rendering='crispEdges'%3E%3Cpath stroke='%23121212' d='M2 0h4M1 1h1M6 1h1M0 2h1M7 2h1M0 3h1M7 3h1M0 4h1M7 4h1M0 5h1M7 5h1M1 6h1M6 6h1M2 7h4' /%3E%3Cpath stroke='%23cdb489' d='M2 1h1M5 1h1M1 3h1M6 3h1' /%3E%3Cpath stroke='%23622f04' d='M3 1h2M1 4h1M6 4h1M2 5h1M5 5h1' /%3E%3Cpath stroke='%23ffe0ab' d='M1 2h1M6 2h1M3 3h2M3 5h2' /%3E%3Cpath stroke='%23826838' d='M2 2h1M5 2h1M2 4h1M5 4h1M3 6h2' /%3E%3Cpath stroke='%23482303' d='M3 2h2M2 3h1M5 3h1M3 4h2M1 5h1M6 5h1M2 6h1M5 6h1' /%3E%3C/svg%3E")
+  background-repeat: no-repeat
+  background-size: cover
+
+
+@font-face
+  font-family: 'Enter Command'
+  src: local('Enter Command'), url('/fonts/EnterCommand.ttf') format('truetype')
+
+@font-face
+  font-family: 'Enter Command Bold'
+  src: local('Enter Command Bold'), url('/fonts/EnterCommand-Bold.ttf') format('truetype')
+
+@font-face
+  font-family: 'Enter Command Italic'
+  src: local('Enter Command Italic'), url('/fonts/EnterCommand-Italic.ttf') format('truetype')
+
+@font-face
+  font-family: 'Carnevalee Freakshow'
+  src: local('Carnevalee Freakshow'), url('/fonts/CarnevaleeFreakshow.ttf') format('truetype')

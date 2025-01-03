@@ -1,0 +1,43 @@
+{
+  "name": "tombstone-casino-website",
+  "version": "1.0.0",
+  "description": "website for lee's golden casino",
+  "author": "rwampler",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt dev --port 14000 --host",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@tweenjs/tween.js": "^25.0.0",
+    "axios": "^1.7.9",
+    "lodash": "^4.17.21",
+    "luxon": "^3.5.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@types/lodash": "^4.17.13",
+    "@types/luxon": "^3.4.2",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "bulma": "^1.0.3",
+    "eslint": "^9.17.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "nuxt": "^3.15.0",
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.83.0",
+    "sass-loader": "16.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

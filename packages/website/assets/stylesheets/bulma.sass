@@ -1,0 +1,106 @@
+@charset "utf-8"
+
+@use 'sass:color'
+
+@use '~/assets/stylesheets/tombstone'
+
+
+$primary: #000000
+$text: #000000
+
+$button-color: tombstone.$primary-banker
+
+
+$family-primary: 'Enter Command', 'VT323', monospace
+
+@forward 'bulma/sass/utilities'
+@forward 'bulma/sass/base'
+@forward 'bulma/sass/elements/button'
+@forward 'bulma/sass/layout/container'
+@forward 'bulma/sass/form'
+@forward 'bulma/sass/components/tabs'
+@forward 'bulma/sass/helpers'
+
+
+$button-default-background: color.adjust(tombstone.$primary-banker, $lightness: -5%)
+$button-default-background-hover: color.adjust($button-default-background, $lightness: 5%)
+$button-default-background-active: color.adjust($button-default-background, $lightness: 10%)
+$button-default-background-disabled: color.adjust($button-default-background, $lightness: -10%)
+
+$button-default-border: color.adjust($button-default-background, $lightness: -5%)
+$button-default-border-hover: color.adjust($button-default-border, $lightness: 5%)
+$button-default-border-active: color.adjust($button-default-border, $lightness: 10%)
+
+$button-default-color: tombstone.$primary-extra-dark-brown
+$button-default-color-hover: color.adjust($button-default-color, $lightness: 5%)
+$button-default-color-active: color.adjust($button-default-color, $lightness: 10%)
+$button-default-color-disabled: color.adjust($button-default-color, $lightness: 25%)
+
+.button
+  background-color: var(--button-background-color, $button-default-background)
+  border-color: var(--button-border-color, $button-default-border)
+  border-radius: 0
+  color: $button-default-color
+  font-family: 'Enter Command'
+  font-size: 3rem
+  font-weight: bold
+  letter-spacing: .3rem
+  line-height: 2.5rem
+  text-transform: uppercase
+
+  &.is-normal
+    font-size: 1.5rem
+    letter-spacing: .15rem
+    line-height: 1.25rem
+
+  &.is-small
+    font-size: 1.25rem
+    letter-spacing: .1rem
+    line-height: 1rem
+
+  &.is-reduced-right-padding
+    padding-right: 1rem
+
+  &.is-tan
+    --button-background-color: #{tombstone.$primary-tan}
+
+  &.is-paramour
+    --button-background-color: #{tombstone.$primary-paramour}
+    --button-background-hover-color: #{color.adjust(tombstone.$primary-paramour, $lightness: 10%)}
+    --button-background-active-color: #{color.adjust(tombstone.$primary-paramour, $lightness: 15%)}
+    --button-background-disabled-color: #{color.adjust(tombstone.$primary-paramour, $lightness: -20%)}
+    --button-border-color: #{color.adjust(tombstone.$primary-paramour, $lightness: -5%)}
+    --button-border-hover-color: #{color.adjust(tombstone.$primary-paramour, $lightness: 5%)}
+    --button-border-active-color: #{color.adjust(tombstone.$primary-paramour, $lightness: 10%)}
+
+  &.is-mirage
+    --button-background-color: #{tombstone.$primary-mirage}
+    --button-background-hover-color: #{color.adjust(tombstone.$primary-mirage, $lightness: 10%)}
+    --button-background-active-color: #{color.adjust(tombstone.$primary-mirage, $lightness: 15%)}
+    --button-background-disabled-color: #{color.adjust(tombstone.$primary-mirage, $lightness: -20%)}
+    --button-border-color: #{color.adjust(tombstone.$primary-mirage, $lightness: -5%)}
+    --button-border-hover-color: #{color.adjust(tombstone.$primary-mirage, $lightness: 5%)}
+    --button-border-active-color: #{color.adjust(tombstone.$primary-mirage, $lightness: 10%)}
+
+  &.is-shooter
+    --button-background-color: #{tombstone.$primary-shooter}
+    --button-background-hover-color: #{color.adjust(tombstone.$primary-shooter, $lightness: 10%)}
+    --button-background-active-color: #{color.adjust(tombstone.$primary-shooter, $lightness: 15%)}
+    --button-background-disabled-color: #{color.adjust(tombstone.$primary-shooter, $lightness: -20%)}
+    --button-border-color: #{color.adjust(tombstone.$primary-shooter, $lightness: -5%)}
+    --button-border-hover-color: #{color.adjust(tombstone.$primary-shooter, $lightness: 5%)}
+    --button-border-active-color: #{color.adjust(tombstone.$primary-shooter, $lightness: 10%)}
+
+  &:not([disabled])
+    &:hover
+      background-color: var(--button-background-hover-color, $button-default-background-hover)
+      border-color: var(--button-border-hover-color, $button-default-border-hover)
+
+    &:active,
+    &.is-active
+      background-color: var(--button-background-active-color, $button-default-background-active)
+      border-color: var(--button-border-active-color, $button-default-border-active)
+
+  &[disabled]
+    cursor: not-allowed
+    background-color: var(--button-background-disabled-color, $button-default-background-disabled)
