@@ -21,7 +21,7 @@
         span.mx-2 for the western-futuristic open world MMORPG
         a(href='https://www.tombstonemmo.com/' target='_blank') Tombstone MMO
       a.mt-2(href='https://www.tombstonemmo.com/' target='_blank')
-        img(src='~/assets/images/tombstone-logo.png')
+        img(src='~/assets/images/tombstone-mmo-logo.png')
 </template>
 
 <script lang='ts'>
