@@ -1,6 +1,7 @@
 @charset "utf-8"
 
 @use 'sass:color'
+@use 'bulma/sass/utilities/mixins'
 
 @use '~/assets/stylesheets/tombstone'
 
@@ -46,20 +47,39 @@ $button-default-color-disabled: color.adjust($button-default-color, $lightness: 
   font-weight: bold
   letter-spacing: .3rem
   line-height: 2.5rem
+  overflow: hidden
   text-transform: uppercase
+
+  @include mixins.until(400px)
+    font-size: 1.5rem
+    letter-spacing: .15rem
+    line-height: 1.25rem
 
   &.is-normal
     font-size: 1.5rem
     letter-spacing: .15rem
     line-height: 1.25rem
 
+    @include mixins.until(400px)
+      font-size: 1.25rem
+      letter-spacing: .1rem
+      line-height: 1rem
+      padding: .5rem .5rem
+
   &.is-small
     font-size: 1.25rem
     letter-spacing: .1rem
     line-height: 1rem
 
+    @include mixins.until(400px)
+      font-size: 1.25rem
+      letter-spacing: .1rem
+      line-height: .75rem
+      padding: .5rem .5rem
+
   &.is-reduced-right-padding
     padding-right: 1rem
+
 
   &.is-tan
     --button-background-color: #{tombstone.$primary-tan}

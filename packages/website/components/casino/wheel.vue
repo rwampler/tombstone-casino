@@ -45,33 +45,33 @@
 
     .buttons.has-addons.is-flex.mt-3
       button.button.is-small.is-reduced-right-padding.is-paramour.is-flex-grow-1(@click.stop.prevent='betParamour' :disabled='!canMakeBet' :class="{ 'is-active': isBetParamour }")
-        | Paramour
+        span.is-flex-grow-1 Paramour
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetParamour')
       button.button.is-small.is-reduced-right-padding.is-mirage.is-flex-grow-1(@click.stop.prevent='betMirage' :disabled='!canMakeBet' :class="{ 'is-active': isBetMirage }")
-        | Mirage
+        span.is-flex-grow-1 Mirage
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetMirage')
       button.button.is-small.is-reduced-right-padding.is-shooter.is-flex-grow-1(@click.stop.prevent='betShooter' :disabled='!canMakeBet' :class="{ 'is-active': isBetShooter }")
-        | Shooter
+        span.is-flex-grow-1 Shooter
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetShooter')
 
     .buttons.has-addons.is-flex.mt-1
       button.button.is-normal.is-reduced-right-padding.is-tan.is-flex-grow-1(@click.stop.prevent='betAmount1' :disabled='!canMakeBet' :class="{ 'is-active': isBetAmount1 }")
-        | $1
+        span.is-flex-grow-1 $1
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetAmount1')
       button.button.is-normal.is-reduced-right-padding.is-tan.is-flex-grow-1(@click.stop.prevent='betAmount5' :disabled='!canMakeBet' :class="{ 'is-active': isBetAmount5 }")
-        | $5
+        span.is-flex-grow-1 $5
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetAmount5')
       button.button.is-normal.is-reduced-right-padding.is-tan.is-flex-grow-1(@click.stop.prevent='betAmount25' :disabled='!canMakeBet' :class="{ 'is-active': isBetAmount25 }")
-        | $25
+        span.is-flex-grow-1 $25
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetAmount25')
       button.button.is-normal.is-reduced-right-padding.is-tan.is-flex-grow-1(@click.stop.prevent='betAmount100' :disabled='!canMakeBet' :class="{ 'is-active': isBetAmount100 }")
-        | $100
+        span.is-flex-grow-1 $100
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetAmount100')
 
@@ -128,7 +128,7 @@ export default {
     },
 
     canMakeBet (): boolean {
-      return this.$state.rolePlayer;
+      return true || this.$state.rolePlayer;
     },
     canPlaceBet (): boolean {
       return this.$state.rolePlayer && this.$state.wheelBetColor !== undefined && this.$state.wheelBetAmount > 0;

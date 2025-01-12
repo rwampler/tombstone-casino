@@ -17,9 +17,9 @@
 
     #legal.is-flex.is-flex-direction-column.is-justify-content-center.is-align-items-center.mt-5.mb-2
       div
-        a(href='https://github.com/rwampler/tombstone-casino' target='_blank') Fan-made website
-        span.mx-2 for the western-futuristic open world MMORPG
-        a(href='https://www.tombstonemmo.com/' target='_blank') Tombstone MMO
+        a.is-underlined(href='https://github.com/rwampler/tombstone-casino' target='_blank') Fan-made website
+        span.with-padding for the western-futuristic open world MMORPG
+        a.is-underlined(href='https://www.tombstonemmo.com/' target='_blank') Tombstone MMO
       a.mt-2(href='https://www.tombstonemmo.com/' target='_blank')
         img(src='~/assets/images/tombstone-mmo-logo.png')
 </template>
@@ -55,6 +55,7 @@ export default {
 </script>
 
 <style lang='sass' scoped>
+@use 'bulma/sass/utilities/mixins'
 @use '~/assets/stylesheets/tombstone'
 
 $max-width: 45rem
@@ -94,6 +95,16 @@ $max-width: 45rem
   font-size: 1.5rem
   line-height: 1.25rem
   padding: 1rem 1rem 0 1rem
+
+  .with-padding
+    padding: 0 1rem
+
+  @include mixins.until(400px)
+    font-size: 1.25rem
+    line-height: 1rem
+
+    .with-padding
+      padding: 0 .25rem
 
   a
     white-space: nowrap
