@@ -1,9 +1,9 @@
 <template lang='pug'>
 .container-casino.is-flex.is-flex-direction-column.is-flex-grow-1
-  common-brand-logo.mt-2
+  common-brand-logo.mt-2(small)
 
   #buttons.is-flex.is-flex-direction-column.is-flex-grow-1
-    button.button.is-large(@click.stop.prevent='jumpCasinoPlayer') Gambler
+    button.button.is-large(@click.stop.prevent='jumpCasinoPlayer' disabled) Gambler
     button.button.is-large.mt-3(@click.stop.prevent='jumpCasinoSpectator') Spectator
 
   #legal.is-flex.is-flex-direction-column.is-justify-content-center.is-align-items-center.mt-5.mb-2

@@ -1,6 +1,6 @@
 <template lang='pug'>
 .container-casino.is-flex.is-flex-direction-column.is-flex-grow-1
-  common-brand-logo.mt-2
+  common-brand-logo.mt-2(small)
 
   #wheel.is-flex.is-flex-direction-column.is-align-items-center.is-flex-grow-1
     .status.mb-2
@@ -9,6 +9,8 @@
       template(v-else) Place your bets!
 
     .wheel.is-flex-grow-1
+      img.spinning-wheel(src='~/assets/images/wheel-inner.png')
+      img(src='~/assets/images/wheel-outer.png')
 
     .timer.mt-2
       span Next Spin:
@@ -17,29 +19,31 @@
         template(v-else-if='nextSpinSeconds < 2') {{ nextSpinSeconds }} second
         template(v-else) {{ nextSpinSeconds }} seconds
 
-  #info.is-flex.is-flex-direction-column.mt-2
-    div
-      span Bankers:
-      span.info-value.ml-2 Lee Rockton
+    .is-flex.is-flex-direction-row.is-justify-content-space-between.is-align-self-stretch
+      div.info-count
+        span Spectators:
+        span.info-value.ml-2 {{ spectatorCount }}
 
+      div.info-count
+        span Gamblers:
+        span.info-value.ml-2 {{ gamblerCount }}
+
+
+  #info.is-flex.is-flex-direction-column.mt-2
     .is-flex.is-flex-direction-row
       .is-flex.is-flex-direction-column
-        .balance
-          span Balance:
-          span.info-value.ml-2 {{ $formatMoney(balance) }}
+        div
+          span Bankers:
+          span.info-value.ml-2 Lee Rockton
 
-        .info-tooltip Visit a Lee's Golden banker for credit or to cap out
+        .is-flex.is-flex-direction-column
+          .balance
+            span Balance:
+            span.info-value.ml-2 {{ $formatMoney(balance) }}
 
-      .is-flex.is-flex-direction-column.ml-5
-        div.info-count
-          span Spectators:
-          span.info-value.ml-2 {{ spectatorCount }}
+          .info-tooltip Visit a Lee's Golden banker for credit or caps
 
-        div.info-count
-          span Gamblers:
-          span.info-value.ml-2 {{ gamblerCount }}
-
-    .buttons.has-addons.is-flex.mt-4
+    .buttons.has-addons.is-flex.mt-3
       button.button.is-small.is-reduced-right-padding.is-paramour.is-flex-grow-1(@click.stop.prevent='betParamour' :disabled='!canMakeBet' :class="{ 'is-active': isBetParamour }")
         | Paramour
         .bet-token.ml-1
@@ -71,7 +75,7 @@
         .bet-token.ml-1
           .bet-icon.logo-primer-cap(v-show='isBetAmount100')
 
-    .is-flex.mt-3
+    .is-flex.mt-1
       button.button.is-large.is-flex-grow-1(:disabled='!canPlaceBet') Place Bet
 
   #legal.is-flex.is-flex-direction-column.is-justify-content-center.is-align-items-center.mb-2
@@ -202,22 +206,30 @@ $max-width: 45rem
 
 #wheel
   border-top: 3px solid tombstone.$primary-banker
+  font-family: 'Enter Command'
+  padding: 0 .5rem
 
   .status
     color: #FFFFFF
-    font-family: 'Enter Command'
     font-size: 3rem
     line-height: 3rem
 
   .timer
     color: #FFFFFF
-    font-family: 'Enter Command'
     font-size: 2rem
     line-height: 2rem
 
   .wheel
     aspect-ratio: 1
-    border: 1px solid tombstone.$primary-banker
+    position: relative
+
+    img
+      width: 100%
+      height: 100%
+      position: absolute
+
+    .spinning-wheel
+      animation: spin 10s linear infinite
 
 #info
   border-top: 3px solid tombstone.$primary-banker
@@ -227,20 +239,9 @@ $max-width: 45rem
   line-height: 2rem
   padding: 0 .5rem .5rem .5rem
 
-  .info-value
-    color: tombstone.$primary-banker
-
-  .info-count
-    font-size: 1.5rem
-    line-height: 1.5rem
-
   .balance
     font-size: 2.5rem
     line-height: 2rem
-
-  .info-tooltip
-    font-size: 1.25rem
-    line-height: 1rem
 
   .bet-token
     height: 1.5rem
@@ -250,6 +251,19 @@ $max-width: 45rem
       height: 1.5rem
       width: 1.5rem
       background-size: 1.5rem
+
+.info-value
+  color: tombstone.$primary-banker
+
+.info-count
+  color: #FFFFFF
+  font-size: 1.5rem
+  line-height: 1.5rem
+
+.info-tooltip
+  font-size: 1.25rem
+  line-height: 1rem
+
 
 #legal
   border-top: 3px solid tombstone.$primary-banker

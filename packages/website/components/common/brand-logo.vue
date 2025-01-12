@@ -1,5 +1,5 @@
 <template lang='pug'>
-.is-flex.is-flex-direction-column.is-align-items-center
+.is-flex.is-flex-direction-column.is-align-items-center(:class="{ 'is-small': !!small }")
   a#title.is-inline-flex.is-flex-direction-row.is-align-items-flex-end.is-justify-content-center(href='/')
     span.head L
     span.body EE'S
@@ -10,6 +10,14 @@
     span Boias Fairest Casino
 
 </template>
+
+<script lang='ts'>
+export default {
+  props: {
+    small: { type: Boolean, required: false }
+  }
+}
+</script>
 
 <style lang='sass' scoped>
 @use '~/assets/stylesheets/tombstone'
@@ -38,5 +46,20 @@ $max-width: 45rem
   color: tombstone.$primary-banker
   font-family: 'Enter Command'
   font-size: 2rem
+
+.is-small
+  #title
+    .head
+      font-size: 2.7rem
+      line-height: 2.4rem
+
+    .body
+      font-size: 1.65rem
+      line-height: 1.375rem
+      letter-spacing: .11rem
+      padding-bottom: .275rem
+
+  #sub-title
+    font-size: 1.1rem
 
 </style>
