@@ -2,37 +2,42 @@
 .title-container
   common-brand-logo#brand
 
-  template(v-if='true')
-    #quote.mt-3.is-flex.is-flex-direction-row.is-align-items-center
-      span.is-flex-grow-1
-        .body.mt-3 Welcome, and please enjoy your stay!
-        .body.mt-3 At Lee's Golden, we offer the finest games of chance in the Boia wasteland. Spin the wheel, roll the dice, and strike it rich!
-        .author.my-2 Lee Rockton, Proprietor
-      span.avatar
-        img(src='~/assets/images/avatar.png')
+  #quote.mt-3.is-flex.is-flex-direction-row.is-align-items-center
+    span.is-flex-grow-1
+      .body.mt-3 Welcome, and please enjoy your stay!
+      .body.mt-3 At Lee's Golden, we offer the finest games of chance in the Boia wasteland. Spin the wheel, roll the dice, and strike it rich!
+      .author.my-2 Lee Rockton, Proprietor
+    span.avatar
+      img(src='~/assets/images/avatar.png')
 
-    #buttons.is-flex.is-flex-direction-column.mt-5
-      button.button.is-large(@click.stop.prevent='jumpCasino') Casino
-      a.button.is-large.mt-3(disabled) Office
+  #buttons.is-flex.is-flex-direction-column.mt-5
+    button.button.is-large(@click.stop.prevent='jumpCasino') Casino
+    a.button.is-large.mt-3(disabled) Office
 
-    #legal.is-flex.is-flex-direction-column.mt-5.mb-2
-      .is-flex.is-flex-direction-row.is-align-items-center
-        a(href='https://www.tombstonemmo.com/' target='_blank')
-          img(src='~/assets/images/tombstone-mmo-logo.png')
-        .is-flex-grow-1.ml-4
-          a.is-underlined(href='https://github.com/rwampler/tombstone-casino' target='_blank') Fan-made website
-          span.with-padding for the western-futuristic open world MMORPG
-          a.is-underlined(href='https://www.tombstonemmo.com/' target='_blank') Tombstone MMO
-      #other-fansites.is-flex.is-flex-direction-column.is-align-items-center.mt-5
-        span Other fan-sites:
-        a.is-underlined(href='https://tombstonecalculators.com/' target='_blank') Tombstone Calculators
-        a.is-underlined(href='https://gamingwithdaopa.ellatha.com/tombstone-mmo/map/' target='_blank') DaOpa's Interactive Map
-        a.is-underlined(href='https://tombstonemmowiki.org/' target='_blank') Tombstone Wiki
-      #license.has-text-centered.mt-3
-        | Source code licensed
-        a.is-underlined.ml-1(href='https://opensource.org/licenses/mit-license.php' target='_blank') MIT
-        |. Website content licensed
-        a.is-underlined.ml-1(href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank') CC BY-NC-SA 4.0
+  #legal.is-flex.is-flex-direction-column.mt-5.mb-2
+    .is-flex.is-flex-direction-row.is-align-items-center
+      a(href='https://www.tombstonemmo.com/' target='_blank')
+        img(src='~/assets/images/tombstone-mmo-logo.png')
+      .is-flex-grow-1.ml-4
+        a.is-underlined(href='https://github.com/rwampler/tombstone-casino' target='_blank') Fan-made website
+        span.with-padding for the western-futuristic open world MMORPG
+        a.is-underlined(href='https://www.tombstonemmo.com/' target='_blank') Tombstone MMO
+
+    #other-fansites.is-flex.is-flex-direction-row.is-flex-wrap-wrap.is-justify-content-center.is-align-items-center.mt-4
+      span Other fan-sites:
+      .icon-separator.logo-primer-cap.mx-1.mt-1
+      a.is-underlined(href='https://tombstonecalculators.com/' target='_blank') Tombstone Calculators
+      .icon-separator.logo-primer-cap.mx-1.mt-1
+      a.is-underlined(href='https://gamingwithdaopa.ellatha.com/tombstone-mmo/map/' target='_blank') DaOpa's Interactive Map
+      .icon-separator.logo-primer-cap.mx-1.mt-1
+      a.is-underlined(href='https://tombstonemmowiki.org/' target='_blank') Tombstone Wiki
+      .icon-separator.logo-primer-cap.ml-1.mt-1
+
+    #license.has-text-centered.mt-4
+      | Source code licensed
+      a.is-underlined.ml-1(href='https://opensource.org/licenses/mit-license.php' target='_blank') MIT
+      |. Website content licensed
+      a.is-underlined.ml-1(href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank') CC BY-NC-SA 4.0
 
 </template>
 
@@ -113,6 +118,11 @@ $max-width: 45rem
 
   .with-padding
     padding: 0 .5rem
+
+  .icon-separator
+    background-size: 1rem
+    height: 1rem
+    width: 1rem
 
   @include mixins.until(380px)
     font-size: 1.25rem

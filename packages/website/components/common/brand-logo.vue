@@ -3,7 +3,7 @@
   a#title.is-inline-flex.is-flex-direction-row.is-align-items-flex-end.is-justify-content-center(href='/')
     span.head L
     span.body EE'S
-    span.head.ml-4 G
+    span.head.with-margin G
     span.body OLDEN
 
   #sub-title.sub-title.is-inline-flex.is-justify-content-center
@@ -33,6 +33,9 @@ $max-width: 45rem
     font-size: 4.5rem
     line-height: 4rem
 
+    &.with-margin
+      margin-left: 1rem
+
   .body
     border-top: 3px solid tombstone.$primary-banker
     border-bottom: 3px solid tombstone.$primary-banker
@@ -52,6 +55,9 @@ $max-width: 45rem
     .head
       font-size: 2.7rem
       line-height: 2.4rem
+
+      &.with-margin
+        margin-left: .5rem
 
     .body
       font-size: 1.65rem
